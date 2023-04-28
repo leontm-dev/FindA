@@ -40,7 +40,7 @@ body {
     position: relative;
     margin: auto;
     width: 300px;
-    max-height: 400px;
+    max-height: fit-content;
 }
 .main-title {
     position: relative;
