@@ -3,4 +3,4 @@ document.getElementById("home-item").addEventListener("click", (ev) => {
 });
 document.getElementById("news-item").addEventListener("click", (ev) => {
     window.location.href = "#news-seite"
-})
+});

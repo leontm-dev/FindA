@@ -4,6 +4,18 @@ body {
     margin: 0;
     scroll-behavior: smooth;
 }
+@media (height <= 620px) {
+    .main-img {
+        width: 300px;
+        height: 300px;
+    }
+}
+@media (height <= 360px) {
+    .main-img {
+        width: 200px;
+        height: 200px;
+    }
+}
 .nav {
     position: fixed;
     width: 100%;
@@ -36,21 +48,17 @@ body {
     display: flex;
     justify-content: center;
 }
-.main-content {
-    position: relative;
+.main-img {
     margin: auto;
-    width: 300px;
-    max-height: fit-content;
-}
-.main-title {
-    position: relative;
-    max-width: 100%;
 }
 .main-details {
-    width: 100%;
-    text-align: center;
+    position: relative;
+    height: 60px;
+    background-color: #c9d4b2;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
 }
 .news-seite {
     position: relative;
