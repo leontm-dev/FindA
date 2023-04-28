@@ -44,7 +44,7 @@ body {
 }
 .main-title {
     position: relative;
-    max-width: 300px;
+    max-width: 100%;
 }
 .main-details {
     width: 100%;
