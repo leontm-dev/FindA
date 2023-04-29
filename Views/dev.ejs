@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindA | Staff</title>
+    <link rel="stylesheet" href="/Dev/style.css">
+    <link rel="icon" href="/Images/FindA Logo Rund.png">
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav" id="nav">
+        <div class="nav-item" id="home-item" title="Home">
+            <img class="nav-item-img" src="/Images/Black/Home.png">
+        </div>
+        <div class="nav-item" id="news-item" title="Neuigkeiten">
+            <img class="nav-item-img" src="/Images/Black/Megafon.png">
+        </div>
+    </nav>
+    <div class="loader" id="loader">
+        <input class="loader-password" id="loader-password" type="password" placeholder="Passwort...">
+    </div>
+    <div class="edit-window hide" id="edit-window">
+        <div class="edit-title">Erstellen Sie eine neue Neuigkeit</div>
+        <div class="edit-news" id="edit-news">
+            <input class="edit-news-title" id="edit-news-title" placeholder="Titel..." type="text">
+            <input class="edit-news-date" id="edit-news-date" type="datetime-local">
+            <textarea class="edit-news-details" id="edit-news-details" placeholder="Infos..."></textarea>
+        </div>
+        <button class="edit-send" id="edit-send" type="button">Hochladen</button>
+    </div>
+    <div class="news-window hide" id="news-window">
+        <div class="news-window-title">Letze Neuigkeiten</div>
+        <div class="news" id="news-start">
+            <div class="news-title">Start des Newsletters <span class="news-date">(20.04.2023)</span></div>
+            <div class="news-details">Dies ist der offizielle Start des Newsletters der FindA App. Ab dem heutigen Tag kommen regelmäßig Updates.</div>
+        </div>
+    </div>
+    <footer class="footer hide" id="footer">
+        <div class="footer-content">© FindA 2023</div>
+    </footer>
+    <script src="/Dev/script.js"></script>
+</body>
+</html>

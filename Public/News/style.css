@@ -51,95 +51,41 @@ body {
 .main-img {
     margin: auto;
 }
-.main-details {
-    position: relative;
-    height: 60px;
-    background-color: #c9d4b2;
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    justify-content: center;
-    font-size: 40px;
-}
-.wir-seite {
+.news-window {
     position: relative;
     width: 100%;
     min-height: 100px;
+    background-color: white;
 }
-.wir-title {
-    position: relative;
-    margin: 5%;
+.news-window-title {
+    margin: 5% 0 0 5%;
     font-size: 35px;
     font-family: Arial, Helvetica, sans-serif;
-}
-.wir-info {
-    margin: 0 2%;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.news-seite {
     position: relative;
-    margin: 0;
-    width: 100%;
-    min-height: 100px;
-    z-index: 100;
-}
-.news-seite-title {
-    position: relative;
-    margin: 5%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 35px;
 }
 .news {
-    margin: 30px 2%;
-    position: relative;
+    width: 95%;
+    margin: 30px 2.5%;
     min-height: 100px;
-    border: #c9d4b2 0.5px solid;
-    box-shadow: #c9d4b2 2px 2px 2px 1px;
+    border: solid #c9d4b2 0.5px;
+    position: relative;
 }
 .news-title {
     position: relative;
-    margin: 10px 2%;
-    font-size: 30px;
+    margin: 2%;
     font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
 }
-.news-title span {
+.news-date {
+    position: relative;
     font-size: 15px;
-}
-.news-description {
-    position: relative;
-    margin: 10px 2%;
-    font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
-.contact-seite {
+.news-details {
     position: relative;
-    width: 100%;
-    min-height: 100px;
-}
-.contact-seite-title {
-    position: relative;
-    margin: 5%;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 35px;
-}
-.contact-seite-infos {
-    position: relative;
-    margin: 0 2%;
+    margin: 0 2% 2% 2%;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
-}
-.contact-seite-button {
-    position: relative;
-    height: 40px;
-    width: 30%;
-    margin: 0 35%;
-    background-color: #c9d4b2;
-    border: none;
-    font-size: 20px;
-}
-.contact-seite-button:hover {
-    cursor: pointer;
-    box-shadow: black 2px 2px 2px;
 }
 .footer {
     position: relative;
