@@ -1,45 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FindA | Home</title>
-    <link rel="stylesheet" href="/Home/style.css">
-    <link rel="icon" href="/Images/FindA Logo Rund.png">
-</head>
-<body>
-    <nav class="nav" id="nav">
-        <div class="nav-item" id="home-item">
-            <img class="nav-item-img" src="/Images/Black/Home.png">
-        </div>
-        <div class="nav-item" id="news-item">
-            <img class="nav-item-img" src="/Images/Black/Megafon.png">
-        </div>
+    <link rel="stylesheet" href="/Home/style.css" />
+    <link rel="icon" href="/Images/FindA Logo Rund.png" />
+  </head>
+  <body>
+    <nav class="nav-bar" id="nav-bar">
+      <div class="nav-item" id="home-item">
+        <img src="/Images/Black/Home.png" alt="Err" class="item-img" />
+      </div>
+      <div class="nav-item" id="news-item">
+        <img src="/Images/Black/Glocke.png" alt="Err" class="item-img" />
+      </div>
+      <div class="nav-item" id="contact-item">
+        <img src="/Images/Black/Teilen.png" alt="Err" class="item-img" />
+      </div>
     </nav>
-    <div class="main-window" id="main-window">
-        <img class="main-img" id="main-img" src="/Images/FindA Logo Rund.png">
-    </div>
-    <div class="main-details">Spruch fehlt</div>
-    <div class="wir-seite" id="wir-seite">
-        <div class="wir-title">FindA?</div>
-        <div class="wir-info">
-            Text fehlt.
+    <div class="start-up" id="start-up">
+      <div class="plain-back">
+        <div class="phone-container">
+          <div class="top-cutout"></div>
+          <img src="/Images/FindA Logo Rund.png" />
         </div>
-    </div>
-    <div class="how" id="how">
-
-    </div>
-    <div class="contact-seite" id="contact-seite">
-        <div class="contact-seite-title">Kontakt</div>
-        <div class="contact-seite-infos">
-            Falls sie einerseits Fragen zu unsere App haben, oder ihrer finazielle Unterstützung anbieten wollen, kontaktieren sie uns gerne.
+        <div class="text">FindA</div>
+      </div>
+      <div class="scrolldown" style="--color: black">
+        <div class="chevrons">
+          <div class="chevrondown"></div>
+          <div class="chevrondown"></div>
         </div>
-        <button onclick="window.location.href='mailto:finda@windthorstgymnasium.de'" class="contact-seite-button" type="button">E-Mail</button>
+      </div>
     </div>
-    <footer class="footer" id="footer">
-        <div class="footer-content">© FindA 2023</div>
+    <section id="info-section">
+      <div class="section-title">Was ist FindA?</div>
+      <div class="section-content">
+        FindA: Eine Plattform zur Vermittlung von Ausbildungen und Praktika, die
+        wir, Schüler des Windthorst-Gymnasiums Meppen zusammen mit der Firma ncn
+        entwickeln, um Unternehmen und Suchende ohne Hemmschwellen
+        zusammenzubringen. Um unsere Idee, mit der wir im Bundesfinale des Young
+        Economic Summit-Wettbewerbs standen, umzusetzen, brauchen wir Ihre
+        Unterstützung, sowohl beratend als auch finanziell. Um ihnen unser
+        Projekt näher vorzustellen, würden wir uns gerne mit Ihnen treffen! Mit
+        vielen Grüßen das gesamte FindA-Team
+      </div>
+    </section>
+    <section id="contact-section">
+      <div class="section-title">Kontakt</div>
+      <div class="section-content">
+        Falls Sie einerseits Fragen zu unsere App haben, oder Ihre finanzielle
+        Unterstützung anbieten wollen, um die Programmierung zu stemmen,
+        kontaktieren Sie uns gerne.
+      </div>
+      <button class="button">
+        <span class="button-text">Schreib uns</span>
+        <span class="icon">
+          <svg
+            viewBox="0 0 512 512"
+            xmlns="http://www.w3.org/2000/svg"
+            data-icon="paper-plane"
+            width="20px"
+            aria-hidden="true"
+          >
+            <path
+              d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"
+              fill="currentColor"
+            ></path>
+          </svg>
+        </span>
+      </button>
+    </section>
+    <footer>
+      <p>© FindA 2023</p>
     </footer>
     <script src="/Home/script.js"></script>
-</body>
+  </body>
 </html>
