@@ -55,6 +55,7 @@ router.post("/edit/:id/:content", (req, res) => {
   }
 });
 router.delete("/delete/:id", (req, res) => {
+  NEWS.set(`OLD.${req.params.id}`, NEWS.get(`NEWS.${req.params.id}`));
   NEWS.delete(`NEWS.${req.params.id}`);
 });
 // Exports

@@ -1,7 +1,6 @@
 const url = String(window.location.href).replace("/news", "");
 function addNews(header, date, id, info) {
   let news = document.createElement("div");
-  news.title = id;
   news.classList.add("news");
   let details = document.createElement("div");
   details.innerHTML = info;
@@ -18,7 +17,7 @@ window.onload = () => {
   fetch(`${url}api/news/current`, {
     method: "GET",
     headers: {
-      finda_key: "BdTo0gSikXqVjW2P9vuX",
+      finda_key: "2022FindA2023",
     },
   })
     .then((res) => {
@@ -37,10 +36,10 @@ window.onload = () => {
 };
 
 document.getElementById("home-item").addEventListener("click", (ev) => {
-  window.scrollTo({ behavior: "smooth", top: 0 });
+  window.location.href = "https://official.finda-app.repl.co/";
 });
 document.getElementById("news-item").addEventListener("click", (ev) => {
-  window.location.href = `${window.location.href}/news`;
+  window.location.href = `https://official.finda-app.repl.co/news`;
 });
 document.getElementById("contact-item").addEventListener("click", (ev) => {
   window.location.href = "mailto:finda@windthorstgymnasium.de";
