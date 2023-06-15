@@ -65,6 +65,58 @@ function addNews(header, date, id, info) {
     .getElementById("news-window")
     .insertBefore(news, document.getElementById("news-start"));
 }
+function login() {
+  if (
+    document
+      .getElementById("loader")
+      .checkVisibility({ checkVisibilityCSS: true })
+  ) {
+    if (document.getElementById("loader-password").value != "") {
+      fetch(
+        `${url}api/dev/password/${
+          document.getElementById("loader-password").value
+        }`,
+        {
+          method: "GET",
+        }
+      ).then((res) => {
+        if (res.status == 200) {
+          localStorage.setItem(
+            "finda_key",
+            document.getElementById("loader-password").value
+          );
+          document.getElementById("loader").classList.add("hide");
+          document.getElementById("edit-window").classList.remove("hide");
+          document.getElementById("news-window").classList.remove("hide");
+          document.getElementById("footer").classList.remove("hide");
+          fetch(`${url}api/news/current`, {
+            method: "GET",
+            headers: {
+              finda_key: "2022FindA2023",
+            },
+          })
+            .then((res) => {
+              if (res.status == 200) {
+                return res.json();
+              }
+            })
+            .then((data) => {
+              Object.values(data).forEach((e) => {
+                addNews(e.title, e.date, e.id, e.details);
+              });
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        } else {
+          alert("Unauthorized");
+        }
+      });
+    } else {
+      alert("Passwort fehlt!");
+    }
+  }
+}
 window.addEventListener("keydown", (ev) => {
   if (ev.key === "Enter") {
     if (

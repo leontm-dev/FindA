@@ -203,3 +203,9 @@ input:focus {
 .editClose:hover {
   cursor: pointer;
 }
+.loader button {
+  position: absolute;
+  top: 60%;
+  left: 45%;
+  width: 10%;
+}
