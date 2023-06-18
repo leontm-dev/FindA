@@ -206,6 +206,7 @@ input:focus {
 .loader button {
   position: absolute;
   top: 60%;
-  left: 45%;
-  width: 10%;
+  left: 40%;
+  width: 20%;
+  height: 10%;
 }

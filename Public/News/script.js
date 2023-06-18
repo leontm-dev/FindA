@@ -1,4 +1,4 @@
-const url = String(window.location.href).replace("/news", "");
+const url = String(window.location.href).replace("news", "");
 function addNews(header, date, id, info) {
   let news = document.createElement("div");
   news.classList.add("news");
@@ -8,7 +8,8 @@ function addNews(header, date, id, info) {
   let title = document.createElement("div");
   title.classList.add("news-title");
   title.innerHTML = `${header} <span class='news-date'>(${date})</span>`;
-  news.append([title, details]);
+  news.appendChild(title);
+  news.appendChild(details);
   document
     .getElementById("news-window")
     .insertBefore(news, document.getElementById("news-start"));
@@ -26,9 +27,9 @@ window.onload = () => {
       }
     })
     .then((data) => {
-      for (let i = data.length; i >= 0; i--) {
-        addNews(data[i].title, data[i].date, data[i].id, data[i].info);
-      }
+      Object.values(data).forEach((e) => {
+        addNews(e.title, e.date, e.id, e.details);
+      });
     })
     .catch((err) => {
       console.log(err);
