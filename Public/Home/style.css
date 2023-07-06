@@ -16,6 +16,9 @@ body {
   .scrolldown {
     display: none;
   }
+  .top-cutout {
+    display: none;
+  }
 }
 
 /* Phone */
@@ -47,7 +50,7 @@ body {
   width: calc(25% - 100px);
   background-color: white;
   margin: 0 50px;
-  border: solid 8px white;
+  border: solid 6px white;
   border-radius: 0 0 20px 20px;
 }
 
@@ -278,13 +281,13 @@ section {
 }
 .section-title {
   position: relative;
-  margin: 5% 5% 0 2%;
+  margin: 65px 65px 0 10px;
   font-size: 40px;
   font-family: "Rubik";
 }
 .section-content {
   position: relative;
-  margin: 2.6%;
+  margin: 50px;
   font-size: 30px;
   text-align: center;
   font-family: "Mulish";

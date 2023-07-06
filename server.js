@@ -8,25 +8,20 @@ const cors = require("cors");
 
 //App Einstellungen
 
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors(
-    {
-        "methods": [
-            "GET",
-            "POST"
-        ],
-        "origin": "http://localhost:2000/*",
-        "allowedHeaders": [
-            "finda_key"
-        ]
-    }
-));
+app.use(
+  cors({
+    methods: ["GET", "POST"],
+    origin: "https://official.finda-app.repl.co/*",
+    allowedHeaders: ["finda_key"],
+  })
+);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "Views"));
-app.use(express.static(path.join(__dirname, "Public")))
+app.use(express.static(path.join(__dirname, "Public")));
 app.listen(2000, () => {
-    console.log("2000");
+  console.log("2000");
 });
 
 // Router
