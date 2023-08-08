@@ -12,9 +12,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(
   cors({
-    methods: ["GET", "POST"],
+    methods: ["GET", "POST", "DELETE", "PATCH"],
     origin: "https://official.finda-app.repl.co/*",
-    allowedHeaders: ["finda_key"],
   })
 );
 app.set("view engine", "ejs");
