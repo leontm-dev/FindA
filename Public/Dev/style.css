@@ -9,6 +9,13 @@ body {
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
+  background: linear-gradient(
+    180deg,
+    hsla(207, 95%, 75%, 1) 0%,
+    hsla(230, 100%, 63%, 1) 60%,
+    hsla(262, 99%, 67%, 1) 78%,
+    hsla(274, 98%, 65%, 1) 89%
+  );
 }
 /* Nav */
 
@@ -19,7 +26,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   z-index: 100;
-  background-color: #c9d4b2;
+  background: transparent;
 }
 .nav-item {
   position: relative;
@@ -37,7 +44,7 @@ body {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background-color: #c9d4b2;
+  background: transparent;
   display: flex;
   justify-content: center;
   z-index: 99;
@@ -63,7 +70,12 @@ input:focus {
   position: relative;
   width: 100%;
   min-height: 100px;
-  background-color: #c9d4b2;
+  background: linear-gradient(
+    135deg,
+    hsla(215, 77%, 90%, 1) 0%,
+    hsla(215, 90%, 73%, 1) 39%,
+    hsla(11, 61%, 44%, 1) 92%
+  );
   margin: 0;
 }
 .edit-title {
@@ -129,7 +141,7 @@ input:focus {
   width: 95%;
   margin: 30px 2.5%;
   min-height: 100px;
-  border: solid #c9d4b2 0.5px;
+  border: solid black 0.5px;
   position: relative;
 }
 .news-title {
@@ -152,7 +164,12 @@ input:focus {
 .footer {
   position: relative;
   width: 100%;
-  background-color: #c9d4b2;
+  background: linear-gradient(
+    135deg,
+    hsla(215, 77%, 90%, 1) 0%,
+    hsla(215, 90%, 73%, 1) 39%,
+    hsla(11, 61%, 44%, 1) 92%
+  );
   height: 50px;
   margin-top: 6%;
   display: flex;
@@ -162,14 +179,16 @@ input:focus {
   font-family: Arial, "Rubik";
   margin: auto;
 }
-::selection {
-  background-color: #c9d4b2;
-}
 .devButton {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: #c9d4b2;
+  background: linear-gradient(
+    135deg,
+    hsla(215, 77%, 90%, 1) 0%,
+    hsla(215, 90%, 73%, 1) 39%,
+    hsla(11, 61%, 44%, 1) 92%
+  );
   z-index: 200;
 }
 .edit {
