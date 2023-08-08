@@ -292,9 +292,6 @@ section {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.section-title:hover {
-  text-decoration: underline;
-}
 .section-content {
   position: relative;
   padding: 50px;
