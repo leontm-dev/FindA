@@ -1,5 +1,5 @@
-const url = String(window.location.href).replace("dev", "");
-function addNews(header, date, id, info) {
+const url = "official.finda-app.repl.co";
+async function addNews(header, date, id, info) {
   let news = document.createElement("div");
   news.title = id;
   news.classList.add("news");
@@ -73,14 +73,14 @@ function login() {
   ) {
     if (document.getElementById("loader-password").value != "") {
       fetch(
-        `${url}api/dev/password/${
+        `${url}/api/dev/password/${
           document.getElementById("loader-password").value
         }`,
         {
           method: "GET",
         }
       ).then((res) => {
-        if (res.status == 200) {
+        if (res.ok) {
           localStorage.setItem(
             "finda_key",
             document.getElementById("loader-password").value
@@ -89,14 +89,11 @@ function login() {
           document.getElementById("edit-window").classList.remove("hide");
           document.getElementById("news-window").classList.remove("hide");
           document.getElementById("footer").classList.remove("hide");
-          fetch(`${url}api/news/current`, {
+          fetch(`${url}/api/news/current`, {
             method: "GET",
-            headers: {
-              finda_key: "2022FindA2023",
-            },
           })
             .then((res) => {
-              if (res.status == 200) {
+              if (res.ok) {
                 return res.json();
               }
             })
@@ -109,67 +106,19 @@ function login() {
               console.log(err);
             });
         } else {
-          alert("Unauthorized");
+          alert("Ein Fehler bei der Orginal Request ist fehlgeschlagen!");
+          console.log(res.json());
         }
       });
     } else {
-      alert("Passwort fehlt!");
+      alert(
+        "Das Passwort ist entweder nicht eingegeben, oder es liegt ein Fehler im Code vor."
+      );
     }
   }
 }
 window.addEventListener("keydown", (ev) => {
-  if (ev.key === "Enter") {
-    if (
-      document
-        .getElementById("loader")
-        .checkVisibility({ checkVisibilityCSS: true })
-    ) {
-      if (document.getElementById("loader-password").value != "") {
-        fetch(
-          `${url}api/dev/password/${
-            document.getElementById("loader-password").value
-          }`,
-          {
-            method: "GET",
-          }
-        ).then((res) => {
-          if (res.status == 200) {
-            localStorage.setItem(
-              "finda_key",
-              document.getElementById("loader-password").value
-            );
-            document.getElementById("loader").classList.add("hide");
-            document.getElementById("edit-window").classList.remove("hide");
-            document.getElementById("news-window").classList.remove("hide");
-            document.getElementById("footer").classList.remove("hide");
-            fetch(`${url}api/news/current`, {
-              method: "GET",
-              headers: {
-                finda_key: "2022FindA2023",
-              },
-            })
-              .then((res) => {
-                if (res.status == 200) {
-                  return res.json();
-                }
-              })
-              .then((data) => {
-                Object.values(data).forEach((e) => {
-                  addNews(e.title, e.date, e.id, e.details);
-                });
-              })
-              .catch((err) => {
-                console.log(err);
-              });
-          } else {
-            alert("Unauthorized");
-          }
-        });
-      } else {
-        alert("Passwort fehlt!");
-      }
-    }
-  }
+  login();
 });
 document.getElementById("edit-send").addEventListener("click", (ev) => {
   let title = document.getElementById("edit-news-title").value;
@@ -188,23 +137,22 @@ document.getElementById("edit-send").addEventListener("click", (ev) => {
           date: date,
           details: infos,
         };
-        fetch(`${url}api/news/new/${JSON.stringify(news)}`, {
+        fetch(`${url}/api/news/new/${JSON.stringify(news)}`, {
           method: "POST",
-          headers: {
-            finda_key: "2022FindA2023",
-          },
         })
           .then((res) => {
-            if (res.status === 200) {
+            if (res.ok) {
               alert("Erfolg");
             } else {
               alert("Etwas ist schiefgelaufen");
+              console.log(res.json());
             }
           })
           .then((data) => {
-            data;
+            console.log(data);
           })
           .catch((err) => {
+            alert("Ein Fehler ist aufgetreten!");
             console.log(err);
           });
       } else {
@@ -222,18 +170,15 @@ document.getElementById("edit-send").addEventListener("click", (ev) => {
           details: infos,
         };
         fetch(
-          `${url}api/news/edit/${
+          `${url}/api/news/edit/${
             document.getElementById("edit-window").title
           }/${JSON.stringify(news)}`,
           {
             method: "POST",
-            headers: {
-              finda_key: "2022FindA2023",
-            },
           }
         )
           .then((res) => {
-            if (res.status === 200) {
+            if (res.ok) {
               alert("Erfolg");
               document.getElementById("editClose").style.display = "none";
               document.getElementById("edit-news-details").value = "";
@@ -244,12 +189,14 @@ document.getElementById("edit-send").addEventListener("click", (ev) => {
               document.getElementById("edit-window").localName = "";
             } else {
               alert("Etwas ist schiefgelaufen");
+              console.log(res.json());
             }
           })
           .then((data) => {
-            data;
+            console.log(data);
           })
           .catch((err) => {
+            alert("Ein Fehler ist bei der Request aufgetreten");
             console.log(err);
           });
       } else {
@@ -261,32 +208,29 @@ document.getElementById("edit-send").addEventListener("click", (ev) => {
   }
 });
 document.getElementById("home-item").addEventListener("click", (ev) => {
-  window.location.href = "https://official.finda-app.repl.co/";
+  window.location.href = url;
 });
 document.getElementById("news-item").addEventListener("click", (ev) => {
-  window.location.href = `https://official.finda-app.repl.co/news`;
+  window.location.href = `${url}/news`;
 });
 document.getElementById("contact-item").addEventListener("click", (ev) => {
   window.location.href = "mailto:finda@windthorstgymnasium.de";
 });
 window.onload = async () => {
   if (localStorage.getItem("finda_key") != null) {
-    fetch(`${url}api/dev/password/${localStorage.getItem("finda_key")}`, {
+    fetch(`${url}/api/dev/password/${localStorage.getItem("finda_key")}`, {
       method: "GET",
     }).then((res) => {
-      if (res.status == 200) {
+      if (res.ok) {
         document.getElementById("loader").classList.add("hide");
         document.getElementById("edit-window").classList.remove("hide");
         document.getElementById("news-window").classList.remove("hide");
         document.getElementById("footer").classList.remove("hide");
         fetch(`${url}api/news/current`, {
           method: "GET",
-          headers: {
-            finda_key: "2022FindA2023",
-          },
         })
           .then((res) => {
-            if (res.status == 200) {
+            if (res.ok) {
               return res.json();
             }
           })
@@ -299,7 +243,8 @@ window.onload = async () => {
             console.log(err);
           });
       } else {
-        alert("Unauthorized");
+        console.log(res.json());
+        alert("Ein Fehler ist bei der Request aufgetreten");
       }
     });
   }
