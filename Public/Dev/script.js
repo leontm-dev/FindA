@@ -1,4 +1,4 @@
-const url = "official.finda-app.repl.co";
+const url = "https://official.finda-app.repl.co";
 async function addNews(header, date, id, info) {
   let news = document.createElement("div");
   news.title = id;
