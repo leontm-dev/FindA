@@ -226,7 +226,7 @@ window.onload = async () => {
         document.getElementById("edit-window").classList.remove("hide");
         document.getElementById("news-window").classList.remove("hide");
         document.getElementById("footer").classList.remove("hide");
-        fetch(`${url}api/news/current`, {
+        fetch(`${url}/api/news/current`, {
           method: "GET",
         })
           .then((res) => {
