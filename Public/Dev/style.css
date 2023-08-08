@@ -20,7 +20,6 @@ body {
 /* Nav */
 
 .nav-bar {
-  position: fixed;
   width: 100%;
   height: 70px;
   display: flex;
